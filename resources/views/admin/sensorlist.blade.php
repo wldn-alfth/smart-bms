@@ -279,6 +279,19 @@
                                     <th class="text-center" width="200px">Action</th>
                                     @endif
                                 </tr>
+                                <tr>
+                                    <td class="text-center">{{ ++$n }}</td>
+                                    <td>CCTV Utama</td>
+                                    <td>http://203.6.149.118:89</td>
+                                    @if (Auth::user()->level == 'Developer')
+                                    <td class="text-center">
+                                       
+                                            <a class="btn btn-primary btn-sm" href="#">Edit</a>
+                                            <a href="#" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger btn-sm">Delete</a>
+                                        
+                                    </td>
+                                    @endif 
+                                </tr>
                                 @foreach ($camera as $cameras)
                                 <tr>
                                     <td class="text-center">{{ ++$n }}</td>

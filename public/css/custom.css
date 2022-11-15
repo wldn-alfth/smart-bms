@@ -215,13 +215,10 @@ input:checked+.slider:before {
 #draggable3, #draggable2 {
     cursor: move;
 }
-#containment-wrapper {
+/* #containment-wrapper {
     width: 800px;
     height: 500px;
     background-image:url('/img/800-800.jpg');
     background-repeat: no-repeat;     
     background-size: 100% 100%;
-    
-    
-    
-}
+} */

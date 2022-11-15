@@ -17,7 +17,11 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body justify-content-center">                            
-                            <div id="containment-wrapper"> 
+                            <div id="containment-wrapper" style="width: 800px;
+                                                                height: 500px;
+                                                                background-image:url('{{asset('/img/800-800.jpg')}}');
+                                                                background-repeat: no-repeat;     
+                                                                background-size: 100% 100%;"> 
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @foreach ($light as $lights)
                                 <div id="draggable" class="ui-widget-content draggable" style="position: absolute; left: {{$lights->xpos}}; top: {{$lights->ypos}};">
