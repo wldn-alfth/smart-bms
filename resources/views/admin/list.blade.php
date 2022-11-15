@@ -8,7 +8,7 @@
     <!-- Page Header-->
     <div class="bg-dash-dark-1 py-4">
       <div class="container-fluid">
-        <h2 class="h5 mb-0">Daftar Hak Akses</h2>
+        <h2 class="h5 mb-0">List of Permissions</h2>
       </div>
     </div>
   <div class="container-fluid">
@@ -20,7 +20,7 @@
                   <!-- Sales bar chart-->
                   <div class="card">
                       <div class="card-body">
-                        <h3>Daftar Developer</h3>
+                        <h3>List of Developers</h3>
                         <div class="d-flex justify-content-end">
                             <a class="btn btn-success" href="daftar-admin-create">Tambah</a>
                         </div>
@@ -80,7 +80,7 @@
                         <!-- Sales bar chart-->
                         <div class="card">
                             <div class="card-body">
-                              <h3>Daftar Admin</h3>
+                              <h3>List of Admins</h3>
                               <div class="d-flex justify-content-end">
                                   <a class="btn btn-success" href="daftar-admin-create">Tambah</a>
                               </div>
@@ -136,7 +136,7 @@
                       <!-- Sales bar chart-->
                       <div class="card">
                           <div class="card-body">
-                            <h3>Daftar User</h3>
+                            <h3>List of Users</h3>
                             <div class="d-flex justify-content-end">
                                 <a class="btn btn-success" href="daftar-admin-create">Tambah</a>
                             </div>

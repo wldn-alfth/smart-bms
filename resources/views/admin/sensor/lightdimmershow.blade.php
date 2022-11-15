@@ -19,26 +19,22 @@
                         <div class="col-lg">
                             <!-- Sales bar chart-->
                             <div class="card">
-                                <div class="card-header">
-                                        
-                                  </div>
+                             
                                 <div class="card-body">
                                     @foreach($lightdimmershow as $lightdimmershows)
+                                    @foreach($about as $abouts)
                                         <h3 >API untuk '{{$lightdimmershows->nama}}'</h3>
                                     <div class="row d-flex justify-content-center pt-0">
                                             <div class="col-lg-12">
-                                                <p class="text-xl fw-light mb-0 text-center text-info">.../api/Dimmer/{{$lightdimmershows->id}}</p><span>
-                                                <p class="text text-start mb-0 ">Ganti ... dengan domain yang digunakan</p><span>
-                                                <p class="text text-start fw-light mb-0 ">Contoh:</p><span>
-                                                <p class="text text-start fw-light mb-0 text-primary">http://www.domainsaya.com/<a class="text text-start fw-light mb-0 text-info">api/Dimmer/{{$lightdimmershows->id}}</p><span>
-                                                </a>
+                                                <p class="text-xl fw-light mb-0 text-center text-info">{{$abouts->link}}/api/Dimmer/{{$lightdimmershows->id}}</p><span>
+                                                
                                                 <p class="text text-start fw-light mb-0 ">Cara Penggunaan:</p><span>
                                                 <p class="text text-start mb-0 ">method -> GET</p><span>
                                                 <p class="text text-start mb-0 ">field  -> nilai</p><span>
                                                 
                                             </div>
                                         
-                                                                                    
+                                        @endforeach                                         
                                         @endforeach
 
                                         

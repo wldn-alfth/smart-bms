@@ -17,7 +17,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row d-flex justify-content-center pt-3">
-                                <h3 class="h4 mb-3 ">Harga Listrik Per Satuan</h3>
+                                <h3 class="h4 mb-3 ">Electricity Price per Unit</h3>
                                 @foreach ($harga as $item)
                                 <div class="row align-items-end">
                                     <div class="col-lg-12">
@@ -31,6 +31,37 @@
                                     </div>
                                 </div>
                                  @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-0 mt-0">
+        <div class="container-fluid">
+            <div class="row d-flex align-items-stretch gy-4">
+                <div class="col-lg">
+                    <!-- Sales bar chart-->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-center pt-3">
+                                <h3 class="h4 mb-3 ">Update Blueprint of Pinpoint</h3>
+                               
+                                <div class="row align-items-end">
+                                    <div class="col-lg-12">
+                                        <form action="{{ route('pinpointmapupdate') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+                                                <div class="mb-3">
+                                                    <label for="formFile" class="form-label">Choose Blueprint</label>
+                                                    <input class="form-control" type="file" id="map" name="map">
+                                                </div>
+                                            <input type="submit" value="Upload" class="btn btn-primary">
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                                 
                             </div>
                         </div>
                     </div>
@@ -72,7 +103,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row d-flex justify-content-center pt-3">
-                                <h3 class="h4 mb-3 ">Total Data Suhu dan Kelembaban</h3>
+                                <h3 class="h4 mb-3 ">Total Data Temperature and Humidity</h3>
                                 @foreach ($dht as $energys)
                                 <div class="row align-items-end">
                                     <div class="col-lg-12">

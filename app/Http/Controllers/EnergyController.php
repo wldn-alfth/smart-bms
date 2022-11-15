@@ -11,6 +11,7 @@ use App\Models\EnergyOutlet;
 use App\Models\EnergyOutletMaster;
 use App\Models\EnergyPanel;
 use App\Models\EnergyPanelMaster;
+use App\Models\About;
 use DB;
 use App\Exports\EnergyExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -99,7 +100,8 @@ class EnergyController extends Controller
 
     public function showPanelList($id){
         $panelshow = EnergyPanel::where('id',$id)->get();
-        return view('admin.sensor.panelshow',compact('panelshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.panelshow',compact('panelshow','about'));
     }
 
     public function updatePanelList(Request $request){
@@ -148,7 +150,8 @@ class EnergyController extends Controller
 
     public function showOutletList($id){
         $outletshow = EnergyOutlet::where('id',$id)->get();
-        return view('admin.sensor.outletshow',compact('outletshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.outletshow',compact('outletshow','about'));
     }
 
     public function updateOutletList(Request $request){
@@ -178,11 +181,13 @@ class EnergyController extends Controller
     }
     public function showOutletMasterList($id){
         $outletshow = EnergyOutlet::where('id',$id)->get();
-        return view('admin.sensor.outletmastershow',compact('outletshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.outletmastershow',compact('outletshow','about'));
     }
     public function showPanelMasterList($id){
         $outletshow = EnergyOutlet::where('id',$id)->get();
-        return view('admin.sensor.panelmastershow',compact('outletshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.panelmastershow',compact('outletshow','about'));
     }
 
     public function export_excel()

@@ -38,7 +38,7 @@
                   </svg>
             </button>
           </div>
-          <div class="mx-auto" ><strong class="text-success">Internet of Things Laboratory</strong></div>
+          <div class="mx-auto" ><strong class="text-success">Smart Room - Internet of Things Laboratory</strong></div>
           
             
           <ul class="list-inline mb-0">
@@ -118,15 +118,15 @@
                 <li class="sidebar-item"><a class="sidebar-link" href="{{url('daftar-admin')}}"> 
                         <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                           <use xlink:href="#survey-1"> </use>
-                        </svg><span>Daftar Hak Akses</span></a></li>
+                        </svg><span>List of Permissions</span></a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{url('daftar-sensor')}}"> 
                           <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                             <use xlink:href="#portfolio-grid-1"> </use>
-                          </svg><span>Daftar Sensor</span></a></li>
+                          </svg><span>List of Devices</span></a></li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{url('setting-admin')}}"> 
                             <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                               <use xlink:href="#paper-stack-1"> </use>
-                            </svg><span>Pengaturan</span></a></li>
+                            </svg><span>Setting</span></a></li>
               </ul>
               @endif
               <hr class="sidebar-divider my-0">
@@ -134,9 +134,13 @@
                 <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                   <use xlink:href="#survey-1"> </use>
                 </svg><span>Integrated System </span></a></li>
+              <li class="sidebar-item"><a class="sidebar-link" href="{{url('about')}}"> 
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                    <use xlink:href="#survey-1"> </use>
+                  </svg><span>About </span></a></li>
               <footer class="position-absolute bottom-0 text-end py-3 text-xs" id="footer">
                 <div class="container-fluid text-center">
-                   <p class="mb-0 text-dash-gray">2022 &copy; Created by <a href="https://uns.ac.id">19053</a></p>
+                   <p class="mb-0 text-dash-gray">2022 &copy; Created by <a href="https://elektro.ft.uns.ac.id/laboratorium-internet-of-things-iot/">IoT Lab UNS</a></p>
                 </div>
               </footer>
           </nav>

@@ -17,11 +17,13 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body justify-content-center">                            
+                            @foreach ($map as $maps)                            
                             <div id="containment-wrapper" style="width: 800px;
                                                                 height: 500px;
-                                                                background-image:url('{{asset('/img/800-800.jpg')}}');
+                                                                background-image:url('{{asset('/data_file/'.$maps->map)}}');
                                                                 background-repeat: no-repeat;     
                                                                 background-size: 100% 100%;"> 
+                            @endforeach 
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @foreach ($light as $lights)
                                 <div id="draggable" class="ui-widget-content draggable" style="position: absolute; left: {{$lights->xpos}}; top: {{$lights->ypos}};">

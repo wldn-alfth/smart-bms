@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DhtExtra;
-
+use App\Models\About;
 class DhtExtraController extends Controller
 {
         public function __construct() 
@@ -32,7 +32,8 @@ class DhtExtraController extends Controller
     
         public function showDhtxList($id){
             $DhtExtrashow = DhtExtra::where('id',$id)->get();
-            return view('admin.sensor.dhtextrashow',compact('DhtExtrashow'));
+            $about = About::oldest()->get();
+            return view('admin.sensor.dhtextrashow',compact('DhtExtrashow','about'));
         }
     
         public function updateDhtxList(Request $request){
@@ -76,5 +77,10 @@ class DhtExtraController extends Controller
             DhtExtra::where('id',$id)->update(['status'=>$status]);
                    
             return redirect()->back();
+        }
+        public function showdhtapi(){
+            
+            $about = About::oldest()->get();
+            return view('admin.sensor.dhtshow',compact('about'));
         }
 }

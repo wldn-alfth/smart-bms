@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Light;
 use App\Models\LightMaster;
 use App\Models\LightDimmer;
+use App\Models\About;
 class LightControlController extends Controller
 {
     public function __construct()
@@ -92,7 +93,8 @@ class LightControlController extends Controller
 
     public function showLightList($id){
         $lightshow = Light::where('id',$id)->get();
-        return view('admin.sensor.lightshow',compact('lightshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.lightshow',compact('lightshow','about'));
     }
 
     public function updateLightList(Request $request){
@@ -143,7 +145,8 @@ class LightControlController extends Controller
 
     public function showLightDimmerList($id){
         $lightdimmershow = LightDimmer::where('id',$id)->get();
-        return view('admin.sensor.lightdimmershow',compact('lightdimmershow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.lightdimmershow',compact('lightdimmershow','about'));
     }
 
     public function updateLightDimmerList(Request $request){

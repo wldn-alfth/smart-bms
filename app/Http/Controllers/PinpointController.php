@@ -9,6 +9,7 @@ use App\Models\EnergyPanelMaster;
 use App\Models\FireAlarm;
 use App\Models\LightDimmer;
 use App\Models\Pinpoint;
+use App\Models\PinpointMap;
 
 class PinpointController extends Controller
 {
@@ -24,6 +25,7 @@ class PinpointController extends Controller
         $firealarm = Pinpoint::where('id_nama','fire')->oldest()->get();
         $camera = Pinpoint::where('id_nama','camera')->oldest()->get();
         $dht = Pinpoint::where('id_nama','dht')->oldest()->get();
+        $map = PinpointMap::latest()->paginate(1);
         
         //$lightposition = Pinpoint::where('nama','lampu')
 
@@ -33,7 +35,8 @@ class PinpointController extends Controller
                         'energypanelmaster',
                         'firealarm',
                         'camera',
-                        'dht'
+                        'dht',
+                        'map'
                     ));
     }
     public function pinpointset(){
@@ -43,7 +46,7 @@ class PinpointController extends Controller
         $firealarm = Pinpoint::where('id_nama','fire')->oldest()->get();
         $camera = Pinpoint::where('id_nama','camera')->oldest()->get();
         $dht = Pinpoint::where('id_nama','dht')->oldest()->get();
-        
+        $map = PinpointMap::latest()->paginate(1);
         //$lightposition = Pinpoint::where('nama','lampu')
 
         return view('pin-point3',
@@ -52,7 +55,8 @@ class PinpointController extends Controller
                         'energypanelmaster',
                         'firealarm',
                         'camera',
-                        'dht'
+                        'dht',
+                        'map'
                     ));
     }
 

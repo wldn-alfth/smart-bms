@@ -17,7 +17,7 @@
                             <div class="card">
                                 <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                    <h3 class="h4 mb-3 ">Grafik Penggunaan</h3>
+                                    
                                   </div>
                                     <div id="stockChartContainer" style="height: 400px; width: 100%;"></div>
                                     <div class="mt-3">
@@ -38,7 +38,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center pt-3">
-                                        <h3 class="h4 mb-3 ">Data Penggunaan</h3>
+                                        <h3 class="h4 mb-3 ">Usage Data</h3>
                                     </div>
                                     <table class="table table-striped table-hover">
                                         <tr>
@@ -135,7 +135,7 @@ window.onload = function () {
     theme: "dark2", //"light1", "dark1", "dark2" "light2",
     exportEnabled: true,
     title:{
-      text:"Statistik"
+      text:"Statistic"
     },
     charts: [{
       axisX: {

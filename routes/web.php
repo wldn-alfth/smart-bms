@@ -16,6 +16,8 @@ use App\Http\Controllers\DhtExtraController;
 use App\Http\Controllers\IntegratedSystemController;
 use App\Http\Controllers\DhtSensorTemperatureController;
 use App\Http\Controllers\DhtSensorHumidityController;
+use App\Http\Controllers\PinpointMapController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +41,9 @@ Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
 Route::get('showprofile/{id}',[AuthController::class, 'showprofile'])->name('showprofile');
 Route::post('updateprofile',[AuthController::class, 'updateprofile'])->name('updateprofile');
 
+Route::get('/about',[AboutController::class,'index']);
+Route::get('/aboutedit/{id}',[AboutController::class, 'aboutedit'])->name('aboutedit');
+Route::post('aboutupdate',[AboutController::class, 'aboutupdate'])->name('aboutupdate');
 
 
 Route::resource('/dashboard', \App\Http\Controllers\DashboardController::class);
@@ -56,6 +61,8 @@ Route::get('deletepinpoint/{id}',[PinpointController::class, 'deletepinpoint']);
 Route::get('/createpinpoint',function(){return view('pinpointcreate');});
 Route::post('/storepinpoint',[PinpointController::class, 'storepinpoint'])->name('storepinpoint');
 
+Route::get('/pinpointmap',[PinpointMapController::class,'index']);
+Route::post('pinpointmapupdate',[PinpointMapController::class,'pinpointmapupdate'])->name('pinpointmapupdate');
 //show data sensor
 //energy
 Route::resource('/monitor', \App\Http\Controllers\EnergyController::class);
@@ -75,7 +82,8 @@ Route::get('/dhtsensorexportxlxs',[DhtSensorTemperatureController::class,'export
 Route::get('/dhtsensorexportcsv',[DhtSensorTemperatureController::class,'export_excel_csv']);
 Route::get('/dhtsensorexporthumidxlxs',[DhtSensorHumidityController::class,'export_excel']);
 Route::get('/dhtsensorexporthumidcsv',[DhtSensorHumidityController::class,'export_excel_csv']);
-Route::get('/showdhtapi',function(){return view('admin.sensor.dhtshow');});
+//Route::get('/showdhtapi',function(){return view('admin.sensor.dhtshow');});
+Route::get('showdhtapi',[DhtExtraController::class, 'showdhtapi']);
 //security
 Route::get('/fire-alarm',[FireAlarmController::class,'showData']);
 Route::get('/change-fire-alarm-status/{id}',[FireAlarmController::class,'changeStatus']);
@@ -162,7 +170,7 @@ Route::get('deleteDhtxList/{id}',[DhtExtraController::class, 'deleteDhtxList']);
 Route::get('/daftar-Dhtx-create',function(){return view('admin.sensor.dhtextracreate');});
 Route::get('/daftar-Dhtx-edit/{id}',[DhtExtraController::class, 'editDhtxList'])->name('editDhtxList')->middleware('auth');
 Route::get('/daftar-Dhtx-status/{id}',[DhtExtraController::class,'changeDhtStatus']);
-
+//
 
 
 //login multi level user

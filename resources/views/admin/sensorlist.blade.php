@@ -8,7 +8,7 @@
     <!-- Page Header-->
     <div class="bg-dash-dark-1 py-4">
       <div class="container-fluid">
-        <h2 class="h5 mb-0">Daftar Sensor</h2>
+        <h2 class="h5 mb-0">List of Devices</h2>
       </div>
     </div>
   <div class="container-fluid">
@@ -20,7 +20,7 @@
                   <!-- Sales bar chart-->
                   <div class="card">
                       <div class="card-body">
-                        <h3>Daftar Energi</h3>
+                        <h3>Energy Sensors</h3>
                         @if (Auth::user()->level == 'Developer')
                         <div class="d-flex justify-content-end">
                             <a class="btn btn-success" href="daftar-Panel-create">Tambah</a>
@@ -100,7 +100,7 @@
                         <!-- Sales bar chart-->
                         <div class="card">
                             <div class="card-body">
-                              <h3>Daftar Outlet</h3>
+                              <h3>List of Outlets</h3>
                               @if (Auth::user()->level == 'Developer')
                               <div class="d-flex justify-content-end">
                                   <a class="btn btn-success" href="daftar-Outlet-create">Tambah</a>
@@ -153,7 +153,7 @@
                       <!-- Sales bar chart-->
                       <div class="card">
                           <div class="card-body">
-                            <h3>Daftar Lampu</h3>
+                            <h3>List of Lights</h3>
                             @if (Auth::user()->level == 'Developer')
                             <div class="d-flex justify-content-end">
                                 <a class="btn btn-success" href="daftar-light-create">Tambah</a>
@@ -203,7 +203,7 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body">
-                          <h3>Daftar Lampu Dimmer</h3>
+                          <h3>List of Light Dimmers</h3>
                           @if (Auth::user()->level == 'Developer')
                           <div class="d-flex justify-content-end">
                               <a class="btn btn-success" href="daftar-lightDimmer-create">Tambah</a>
@@ -254,7 +254,7 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body">
-                          <h3>Daftar Camera</h3>
+                          <h3>List of Cameras</h3>
                           @if (Auth::user()->level == 'Developer')
                           <div class="d-flex justify-content-end">
                               <a class="btn btn-success" href="daftar-Camera-create">Tambah</a>
@@ -324,7 +324,7 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body">
-                          <h3>Daftar Fire Alarm</h3>
+                          <h3>List of Fire Alarms</h3>
                           @if (Auth::user()->level == 'Developer')
                           <div class="d-flex justify-content-end">
                               <a class="btn btn-success" href="daftar-FireAlarm-create">Tambah</a>
@@ -376,7 +376,7 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body">
-                          <h3>Daftar DHT</h3>
+                          <h3>List of DHT Sensors</h3>
                           @if (Auth::user()->level == 'Developer')
                           <div class="d-flex justify-content-end">
                               <a class="btn btn-success" href="daftar-Dhtx-create">Tambah</a>

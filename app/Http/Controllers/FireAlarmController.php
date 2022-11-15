@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\FireAlarm;
-
+use App\Models\About;
 class FireAlarmController extends Controller
 {
     public function __construct() 
@@ -47,7 +47,8 @@ class FireAlarmController extends Controller
 
     public function showFireAlarmList($id){
         $firealarmshow = FireAlarm::where('id',$id)->get();
-        return view('admin.sensor.firealarmshow',compact('firealarmshow'));
+        $about = About::oldest()->get();
+        return view('admin.sensor.firealarmshow',compact('firealarmshow','about'));
     }
 
     public function updateFireAlarmList(Request $request){

@@ -197,13 +197,9 @@
                                 <div class="card-body">
                                     <h3 class="h4 mb-3" href="{{url('camera')}}">Camera</h3>
                                     <div class="row align-items-center">
-                                        
-                                        <div class="col-lg ">
                                             <a img href="{{url('camera')}}">
-                                            <img src="img/stock/stock_cam.jpeg" alt="cam" width="200px" height="90px">
+                                            <img src="img/stock/stock_cam.jpeg" alt="cam" width="100%" height="90px">
                                             </a>
-                                        </div>
-                                        
                                     </div>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center pt-3">
-                                        <h3 class="h4 mb-3 ">Suhu</h3>
+                                        <h3 class="h4 mb-3 ">Temperature</h3>
                                         @forelse ($temperature as $item)
                                         <div class="row align-items-end">
                                             <div class="col-lg-5">
@@ -41,7 +41,7 @@
                             <!-- Sales bar chart-->
                             <div class="card">
                                 <div class="card-body">
-                                  <h3 class="h4 mb-3 ">Grafik Suhu</h3>
+                                  
                                     <div id="stockChartContainer" style="height: 400px; width: 100%;"></div>
                                     <div class="mt-3">
                                     <a class="btn btn-success " href="dhtsensorexportxlxs">Export xlxs</a>
@@ -63,7 +63,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx1s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Temperature {{$dhtx1s->nama}}</h3>
                                       @forelse ($tempx1 as $tempx1s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -92,7 +92,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx2s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Temperature {{$dhtx2s->nama}}</h3>
                                       @forelse ($tempx2 as $tempx2s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -121,7 +121,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx3s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Temperature {{$dhtx3s->nama}}</h3>
                                       @forelse ($tempx3 as $tempx3s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -150,7 +150,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx4s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Temperature {{$dhtx4s->nama}}</h3>
                                       @forelse ($tempx4 as $tempx4s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -179,7 +179,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx5s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Temperature {{$dhtx5s->nama}}</h3>
                                       @forelse ($tempx5 as $tempx5s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">

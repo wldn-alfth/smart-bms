@@ -18,7 +18,7 @@
                                     <div class="row d-flex justify-content-center pt-3">
                                         
                                         
-                                        <h3 class="h4 mb-3 text">Kelembaban</h3>
+                                        <h3 class="h4 mb-3 text">Humidity</h3>
                                         @forelse ($humidity as $item)
                                         <div class="row align-items-end">
                                             <div class="col-lg-5">
@@ -67,7 +67,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx1s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Humidity {{$dhtx1s->nama}}</h3>
                                       @forelse ($tempx1 as $tempx1s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -96,7 +96,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx2s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Humidity {{$dhtx2s->nama}}</h3>
                                       @forelse ($tempx2 as $tempx2s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -125,7 +125,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx3s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Humidity {{$dhtx3s->nama}}</h3>
                                       @forelse ($tempx3 as $tempx3s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -154,7 +154,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx4s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Humidity {{$dhtx4s->nama}}</h3>
                                       @forelse ($tempx4 as $tempx4s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">
@@ -183,7 +183,7 @@
                           <div class="card">
                               <div class="card-body">
                                   <div class="row d-flex justify-content-center pt-3">
-                                      <h3 class="h4 mb-3 ">Suhu {{$dhtx5s->nama}}</h3>
+                                      <h3 class="h4 mb-3 ">Humidity {{$dhtx5s->nama}}</h3>
                                       @forelse ($tempx5 as $tempx5s)
                                       <div class="row align-items-end">
                                           <div class="col-lg-5">

@@ -19,19 +19,14 @@
                         <div class="col-lg">
                             <!-- Sales bar chart-->
                             <div class="card">
-                                <div class="card-header">
-                                        
-                                  </div>
+                                
                                 <div class="card-body">
-                                    
+                                    @foreach($about as $abouts)
                                         <h3 >API untuk DHT</h3>
                                     <div class="row d-flex justify-content-center pt-0">
                                              <div class="col-lg-12">
-                                                <p class="text-xl fw-light mb-0 text-center text-info">.../api/Dht</p><span>
-                                                <p class="text text-start mb-0 ">Ganti ... dengan domain yang digunakan</p><span>
-                                                <p class="text text-start fw-light mb-0 ">Contoh:</p><span>
-                                                <p class="text text-start fw-light mb-0 text-primary">http://www.domainsaya.com/<a class="text text-start fw-light mb-0 text-info">api/Dht</p>
-                                                </a>
+                                                <p class="text-xl fw-light mb-0 text-center text-info">{{$abouts->link}}/api/Dht</p><span>
+                                               
                                                 <p class="text text-start fw-light mb-0 ">Cara Penggunaan:</p><span>
                                                 <p class="text text-start mb-0 ">method -> POST</p><span>
                                                 <p class="text text-start mb-0 ">field  -> temperature, humidity</p><span>
@@ -39,7 +34,7 @@
                                             </div> 
                                         
                                                                                     
-                                   
+                                   @endforeach
 
                                         
 

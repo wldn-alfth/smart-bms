@@ -200,7 +200,7 @@
                             <div class="card">
                                 
                                 <div class="card-body">
-                                    <h3 class="h4 mb-3">Tegangan</h3>
+                                    <h3 class="h4 mb-3">Voltage</h3>
                                     <!-- <p class="text-sm fw-light">Lorem ipsum dolor sit</p> -->
                                     <div class="row align-items-center mb-0">
                                         @forelse ($energy as $energies)
@@ -226,7 +226,7 @@
                             <!-- Sales bar chart-->
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="h4 mb-3">Arus</h3>
+                                    <h3 class="h4 mb-3">Current</h3>
                                     <div class="row align-items-end">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
@@ -250,7 +250,7 @@
                             <!-- Sales bar chart-->
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="h4 mb-3">Frekuensi</h3>
+                                    <h3 class="h4 mb-3">Frequency</h3>
                                     <div class="row align-items-end">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
