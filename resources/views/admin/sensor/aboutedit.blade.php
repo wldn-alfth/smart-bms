@@ -34,12 +34,18 @@
                                         <input type="text" id="nama-edit" name="nama-edit"  value="{{$editcameras->nama}}" class="form-control">
                                     </div>
                                 </div>
+                                @if (Auth::user()->level == 'Developer')
                                 <div class="form-group mb-3">
-                                    <label for="name-edit" class="col-dm-6 control-label">IP/Link</label>
+                                    <label for="name-edit" class="col-dm-6 control-label">Link</label>
                                     <div class="col-center">
+                                        
                                         <input type="text" id="link-edit" name="link-edit"  value="{{$editcameras->link}}" class="form-control">
+                                        
                                     </div>
                                 </div>
+                                @else
+                                        <input type="hidden" id="link-edit" name="link-edit"  value="{{$editcameras->link}}" class="form-control" >
+                                @endif
                                 <div class="form-group mb-3">
                                     <label for="name-edit" class="col-dm-6 control-label">Deskripsi</label>
                                     <div class="col-center">

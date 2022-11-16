@@ -17,7 +17,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    {{-- <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">  --}}
     <!-- DataTable Styles -->
     <link rel="stylesheet" href="{{asset('table/dist/style.css')}}">
                       

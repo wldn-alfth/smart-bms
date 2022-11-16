@@ -38,6 +38,7 @@
             </div>
         </div>
     </section>
+    @if (Auth::user()->level == 'Developer')
     <section class="pt-0 mt-0">
         <div class="container-fluid">
             <div class="row d-flex align-items-stretch gy-4">
@@ -69,6 +70,7 @@
             </div>
         </div>
     </section>
+    @endif
     <section class="pt-0 mt-0">
         <div class="container-fluid">
             <div class="row d-flex align-items-stretch gy-4">
@@ -84,7 +86,9 @@
                                         <p class="text-xl fw-light mb-0 text-dash-color-3">@php echo number_format($energys->id );@endphp Data</p><span>
                                         <a class="btn btn-success " href="setting_energyexportxlxs">Download Data (xlxs)</a>
                                         <a class="btn btn-info " href="setting_energyexportcsv">Download Data (csv)</a>
-                                        <a class="btn btn-danger " href="truncateDataEnergy" onclick="return confirm('Data yang sudah dihapuskan tidak bisa dikembalikan lagi. Pastikan anda sudah mendownload data. Apakah anda yakin akan menghapus data?');">Hapus Data</a>
+                                        @if (Auth::user()->level == 'Developer')
+                                        <a class="btn btn-danger " href="truncateDataEnergy" onclick="return confirm('Data yang sudah dihapuskan tidak bisa dikembalikan lagi. Pastikan anda sudah mendownload data. Apakah anda yakin akan menghapus data?');">Delete All Data</a>
+                                        @endif
                                     </div>
                                 </div>
                                  @endforeach
@@ -110,7 +114,9 @@
                                         <p class="text-xl fw-light mb-0 text-dash-color-3">@php echo number_format($energys->id );@endphp Data</p><span>
                                         <a class="btn btn-success " href="setting_dhtexportxlxs">Download Data (xlxs)</a>
                                         <a class="btn btn-info " href="setting_dhtexportcsv">Download Data (csv)</a>
-                                        <a class="btn btn-danger " href="truncateDataDht" onclick="return confirm('Data yang sudah dihapuskan tidak bisa dikembalikan lagi. Pastikan anda sudah mendownload data. Apakah anda yakin akan menghapus data?');">Hapus Data</a>
+                                        @if (Auth::user()->level == 'Developer')
+                                        <a class="btn btn-danger " href="truncateDataDht" onclick="return confirm('Data yang sudah dihapuskan tidak bisa dikembalikan lagi. Pastikan anda sudah mendownload data. Apakah anda yakin akan menghapus data?');">Delete All Data</a>
+                                        @endif
                                     </div>
                                 </div>
                                  @endforeach
