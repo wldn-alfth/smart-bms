@@ -45,7 +45,7 @@
                                             <th class="text-center" width="80px">No</th>
                                             <th class="text-center" width="160px">Bulan</th>
                                             <th class="text-center" width="160px">Tahun</th>
-                                            <th class="text-center" >Energi</th>
+                                            <th class="text-center" >Energi (KWH)</th>
                                             <th class="text-center" width="40px"></th>
                                             <th class="text-center">Total</th>
                                             
@@ -56,9 +56,9 @@
                                             <td class="text-center">{{++$i}}</td>
                                             <td class="text-center">{{$prices->month}}</td>
                                             <td class="text-center">{{$prices->tahun}}</td>
-                                            <td class="text-center">@php echo number_format((float)$prices->total,2,'.',''); @endphp</td>
+                                            <td class="text-center">@php echo number_format((float)$prices->result,2,'.',''); @endphp</td>
                                             <td class="text-end">Rp.</td>
-                                            <td class="text-end">@php echo number_format($prices->result); @endphp</td>
+                                            <td class="text-end">@php echo number_format($prices->harga); @endphp</td>
                                             
                                             
                                         </tr>
@@ -159,7 +159,7 @@ window.onload = function () {
       data: [{
         type: "area",
         name: "Energi",
-        yValueFormatString: "##,###.##W",
+        yValueFormatString: "##,###.##KWH",
         dataPoints : dataPoints
       }]
     }],

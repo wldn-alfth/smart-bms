@@ -332,11 +332,12 @@ class SensorDataController extends Controller
     }
 
     public function energyStatistik(){
-        $energy_day = Energy::select(Energy::raw('DATE(created_at) as date'), energy::raw('SUM(active_power) as sale'))->
-        groupBy(Energy::raw('DATE(created_at)'))->
-        get();
-
-        return response()->json($energy_day);    
+        // $energy_day = Energy::select(Energy::raw('DATE(created_at) as date'), energy::raw('SUM(active_power) as sale'))->
+        // groupBy(Energy::raw('DATE(created_at)'))->
+        // get();
+        //return response()->json($energy_day); 
+        $energiwh = DB::select('SELECT date(energies.created_at)as date,SUM(energies.active_power*(energy_costs.delay/3600)) AS sale FROM energies JOIN energy_costs WHERE year(energies.created_at) GROUP BY date(energies.created_at) DESC;');
+        return response()->json($energiwh);   
     }
 
     public function suhulogger(){
