@@ -20,9 +20,11 @@
                             @foreach ($map as $maps)                            
                             <div id="containment-wrapper" style="width: 800px;
                                                                 height: 500px;
+                                                                position: relative;
                                                                 background-image:url('{{asset('/data_file/'.$maps->map)}}');
                                                                 background-repeat: no-repeat;     
-                                                                background-size: 100% 100%;"> 
+                                                                background-size: 100% 100%;
+                                                                "> 
                             @endforeach
                                 <meta name="csrf-token" content="{{ csrf_token() }}" />
                                 @foreach ($light as $lights)
