@@ -49,8 +49,8 @@
                                 <td class="text-center">
                                         <a class="btn btn-info btn-sm" href="showPanelMasterList/{{$energy_panel_masters->id}}">API</a>
                                         @if (Auth::user()->level == 'Developer')
-                                        <a class="btn btn-primary btn-sm" href="#">Edit</a>
-                                        <a href="#"  class="btn btn-danger btn-sm">Delete</a>
+                                        {{-- <a class="btn btn-primary btn-sm" href="#">Edit</a>
+                                        <a href="#"  class="btn btn-danger btn-sm">Delete</a> --}}
                                         @endif
                                 </td>
                             </tr>
@@ -62,8 +62,8 @@
                                 <td class="text-center">
                                         <a class="btn btn-info btn-sm" href="showOutletMasterList/{{$energy_outlet_masters->id}}">API</a>
                                         @if (Auth::user()->level == 'Developer')
-                                        <a class="btn btn-primary btn-sm" href="#">Edit</a>
-                                        <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                        {{-- <a class="btn btn-primary btn-sm" href="#">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm">Delete</a> --}}
                                         @endif
                                 </td>
                             </tr>
@@ -93,7 +93,7 @@
       
   </section>
 
-      <section class="pt-0 mt-0">
+      {{-- <section class="pt-0 mt-0">
             <div class="container-fluid">
                 <div class="row d-flex align-items-stretch">
                     <div class="col-lg">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-        </section>
+        </section> --}}
 
         <section class="pt-0 mt-0">
           <div class="container-fluid">
@@ -410,8 +410,8 @@
                                     <td class="text-center">
                                             <a class="btn btn-info btn-sm" href="showdhtapi">API</a>
                                             @if (Auth::user()->level == 'Developer')
-                                            <a class="btn btn-primary btn-sm" href="#">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                            {{-- <a class="btn btn-primary btn-sm" href="#">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Delete</a> --}}
                                             @endif
                                     </td>
                                 </tr>

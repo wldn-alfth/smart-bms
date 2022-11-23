@@ -19,9 +19,7 @@
                         <div class="col-lg">
                             <!-- Sales bar chart-->
                             <div class="card">
-                                <div class="card-header">
-                                        
-                                  </div>
+                                
                                 <div class="card-body">
                                     @foreach($firealarmshow as $firealarmshows)
                                     @foreach($about as $abouts)

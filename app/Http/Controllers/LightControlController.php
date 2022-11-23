@@ -15,8 +15,8 @@ class LightControlController extends Controller
     }
     public function showData(){
         $posts = LightMaster::latest()->Paginate(1);
-        $controls = Light::oldest()->Paginate(10);
-        $dimmer = LightDimmer::oldest()->simplePaginate(10);
+        $controls = Light::oldest()->Paginate(100);
+        $dimmer = LightDimmer::oldest()->simplePaginate(100);
        return view('environment.light',compact('posts','controls','dimmer'));
    } 
 

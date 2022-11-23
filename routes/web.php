@@ -118,7 +118,7 @@ Route::get('truncateDataDht',[SettingController::class,'truncateDataDht']);
 Route::get('setting_energyexportxlxs',[SettingController::class,'Energy_export_excel']);
 Route::get('setting_energyexportcsv',[SettingController::class,'Energy_export_excel_csv']);
 Route::get('truncateDataEnergy',[SettingController::class,'truncateDataEnergy']);
-
+Route::get('ubahstatusdashboard/{id}',[SettingController::class,'ubahstatusdashboard']);
 //lampu
 Route::post('/storeLightList',[LightControlController::class, 'storeLightList'])->name('storeLightList');
 Route::post('updateLightList',[LightControlController::class, 'updateLightList'])->name('updateLightList');

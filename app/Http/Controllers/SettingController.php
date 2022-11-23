@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\EnergyCost;
 use App\Models\DhtSensor;
 use App\Models\Energy;
+use App\Models\DashboardSetting;
 use App\Exports\EnergyRawExport;
 use App\Exports\DhtRawExport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -23,8 +24,8 @@ class SettingController extends Controller
         $harga = EnergyCost::latest()->paginate(1);
         $dht = DhtSensor::latest()->paginate(1);
         $energy = Energy::latest()->paginate(1);
-
-        return view('admin.setting',compact('harga','dht','energy'));
+        $dashboard = DashboardSetting::oldest()->get();
+        return view('admin.setting',compact('harga','dht','energy','dashboard'));
     }
     public function updateHarga(Request $request){
         
@@ -49,6 +50,20 @@ class SettingController extends Controller
                     ->get();
 
         return view('admin.sensor.hargaedit',compact('editharga'));
+    }
+    public function ubahstatusdashboard($id){
+        $getStatus = DashboardSetting::select('status')->where('id',$id)->first();
+        
+        if($getStatus->status==1){
+            $status = 0;
+          
+        }else{
+            $status = 1;
+            
+        }
+        DashboardSetting::where('id',$id)->update(['status'=>$status]);
+               
+        return redirect()->back();
     }
 
     public function Dht_export_excel()

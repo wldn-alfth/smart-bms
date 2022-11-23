@@ -37,12 +37,13 @@ class EnergyController extends Controller
         $energy_cost_delay = EnergyCost::latest()->pluck('delay');
         $energy_submonth =Energy::where('id_kwh', '1')->select(Energy::raw("SUM(active_power) as energy_submonth "))->whereMonth('created_at', Carbon::today()->subMonth())->pluck('energy_submonth');
         
-        $energy_outlet = EnergyOutlet::oldest()->Paginate(10);
-        $energy_panel = EnergyPanel::oldest()->Paginate(10);
+        $energy_outlet = EnergyOutlet::oldest()->Paginate(100);
+        $energy_outlet_master = EnergyOutletMaster::oldest()->Paginate(1);
+        $energy_panel = EnergyPanel::oldest()->Paginate(100);
 
         
         
-        return view('energy.monitor',compact('energy','energy2','energies','energy_today','energy_month','energy_cost','energy_cost_pokok','energy_submonth','energy_panel','energy_outlet','energy_cost_delay'));
+        return view('energy.monitor',compact('energy','energy2','energies','energy_today','energy_month','energy_cost','energy_cost_pokok','energy_submonth','energy_panel','energy_outlet','energy_cost_delay','energy_outlet_master'));
    
     }
 

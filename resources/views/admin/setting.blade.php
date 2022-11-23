@@ -9,6 +9,7 @@
       </div>
     </div>
   <div class="container-fluid">
+    
     <section class="pt-3 mt-3">
         <div class="container-fluid">
             <div class="row d-flex align-items-stretch gy-4">
@@ -126,6 +127,52 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section class="pt-0 mt-0">
+        <div class="container-fluid">
+            <div class="row d-flex align-items-stretch">
+                <div class="col-lg">
+                    <!-- Sales bar chart-->
+                    <div class="card">
+                        <div class="card-body">
+                          <h3 class="h4 mb-3 ">Dashboard Setting</h3>
+                          <div class="table-responsive">
+                            <table class="table mb-0 table-striped">
+                                <thead>
+                                <tr>
+                                    <th class="text-center" >Nama</th>
+                                    <th class="text-center" width="200px">Tampilkan</th>
+                                   
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($dashboard as $dashboards)
+                                <tr>
+                                    <td>{{$dashboards->name}}</td>
+                                    <td class="text-center">
+                                        @if($dashboards->status==1)
+                                        <label class="switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+                                            <a href="{{ url('ubahstatusdashboard/'.$dashboards->id) }}" class="slider round" ></a>
+                                        </label>
+                                        @else
+                                        <label class="switch">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch2" disabled>
+                                            <a href="{{ url('ubahstatusdashboard/'.$dashboards->id) }}" class="slider round" ></a>
+                                        </label>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                                
+                            </table>
+                          </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
 
     

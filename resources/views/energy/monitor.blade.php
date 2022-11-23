@@ -17,9 +17,9 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-end justify-content-between mb-2">
                                         <div class="me-2">
-                                            <p class="text-sm text-uppercase text-gray-600 lh-1 mb-0">Current Usage</p>
+                                            <p class="text-sm text-uppercase text-gray-600 lh-1 mb-0">Energi Current</p>
                                         </div>
-                                        @forelse ($energies as $ener)
+                                        @forelse ($energy as $ener)
                                         <p class="text-xxl lh-1 mb-0 text-success">{{$ener -> active_power }}</p>
                                         @empty
                                         @endforelse
@@ -155,6 +155,20 @@
                                     <div class="row d-flex justify-content-center pt-3">
                                         <h3 class="h4 mb-3">Status</h3>
                                          <div class="row align-items-end">
+                                            @foreach($energy_outlet_master as $energy_outlet_masters)
+                                                    <div class="col-lg-6">
+                                                        <p class="text-xl fw-light mb-0 text-info">Outlet Master</p><span>
+                                                    </div> 
+                                                    @if($energy_outlet_masters->status==1)
+                                                    <div class="col-lg-6">
+                                                        <p class="text-xl fw-light mb-0 text-end text-success">Online</p><span>
+                                                    </div>
+                                                    @else
+                                                    <div class="col-lg-6">
+                                                        <p class="text-xl fw-light mb-0 text-end text-dash-color-3">Offline</p><span>
+                                                    </div>
+                                                    @endif
+                                            @endforeach
                                             @foreach($energy_panel as $energy_panels)
                                                     <div class="col-lg-6">
                                                         <p class="text-xl fw-light mb-0 text-info">{{$energy_panels->nama}}</p><span>
@@ -169,7 +183,7 @@
                                                     </div>
                                                     @endif
                                             @endforeach
-                                            @foreach($energy_outlet as $energy_outlets)
+                                            {{-- @foreach($energy_outlet as $energy_outlets)
                                                     <div class="col-lg-6">
                                                         <p class="text-xl fw-light mb-0 text-info">{{$energy_outlets->nama}}</p><span>
                                                     </div> 
@@ -182,7 +196,7 @@
                                                         <p class="text-xl fw-light mb-0 text-end text-dash-color-3">Offline</p><span>
                                                     </div>
                                                     @endif
-                                            @endforeach
+                                            @endforeach --}}
                                         </div>
                                     </div>
                                 </div>
@@ -206,14 +220,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies->tegangan }}</p>
-                                            <p>Volt</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies2->tegangan }}</p>
-                                            <p>Volt</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
@@ -231,14 +247,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies->arus }}</p>
-                                            <p>Node 1</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies2->arus }}</p>
-                                            <p>Node 2</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
@@ -255,14 +273,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies->frekuensi }}</p>
-                                            <p>Node 1</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->frekuensi }}</p>
-                                            <p>Node 2</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
@@ -288,14 +308,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies->active_power }}</p>
-                                            <p>Node 1</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies2->active_power }}</p>
-                                            <p>Node 2</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
@@ -313,14 +335,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies->reactive_power }}</p>
-                                            <p>Node 1</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies2->reactive_power }}</p>
-                                            <p>Node 2</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
@@ -338,14 +362,16 @@
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies->apparent_power }}</p>
-                                            <p>Node 1</p>
+                                            <p>Master</p>
                                         </div>
                                         @empty
                                         @endforelse
                                         @forelse ($energy2 as $energies2) 
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->apparent_power }}</p>
-                                            <p>Node 2</p>
+                                            @foreach ($energy_panel as $energy_panels) 
+                                            <p>{{$energy_panels->nama}}</p>
+                                            @endforeach
                                         </div>
                                         @empty
                                         @endforelse
