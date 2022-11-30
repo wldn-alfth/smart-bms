@@ -38,8 +38,13 @@
                   </svg>
             </button>
           </div>
-          <div class="mx-auto" ><strong class="text-success">Smart Room - Internet of Things Laboratory</strong></div>
           
+          @php 
+          $name_about = App\Models\About::oldest()->get();
+          @endphp
+          @foreach ($name_about as $name_abouts)
+          <div class="mx-auto" ><strong class="text-success">{{$name_abouts->nama}}</strong></div>
+          @endforeach
             
           <ul class="list-inline mb-0">
             </li>
@@ -59,7 +64,6 @@
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center p-4">
             <a href="{{url('profile')}}">
-            <img class="avatar shadow-0 img-fluid rounded-circle" src="{{asset('img/avatar-99.png')}}" alt="...">
             <div class="ms-3 title ">
             <h1 class="h5 mb-1 text">{{ Auth::user()->name }}</h1>
             <p class="text-sm text-gray-700 mb-0 lh-1">{{ Auth::user()->level }}</p>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\About;
+use App\Models\About; 
 
 class AboutController extends Controller
 {
@@ -41,4 +41,5 @@ class AboutController extends Controller
 
         return view('admin.sensor.aboutedit',compact('editcamera'));
     }
+    
 }
