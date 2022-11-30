@@ -101,11 +101,9 @@
                 <ul class="collapse list-unstyled " id="enviDropdown">
                   <li><a class="sidebar-link" href="{{url('temperature')}}">Temperature</a></li>
                   <li><a class="sidebar-link" href="{{url('humidity')}}">Humidity</a></li>
-              
-                  @if (Auth::user()->level == 'Admin' || Auth::user()->level == 'Developer')
                   <li><a class="sidebar-link" href="{{url('light')}}">Light</a></li>
                   {{-- <li><a class="sidebar-link" href="{{url('kontrol')}}">Control</a></li> --}}
-                  @endif
+                  
                 </ul>
               </li>
               <li class="sidebar-item"><a class="sidebar-link" href="{{url('pinpoint')}}"> 

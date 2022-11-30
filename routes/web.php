@@ -28,9 +28,10 @@ use App\Http\Controllers\AboutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function(){
-    return view('auth.login');
-});
+// Route::get('/',function(){
+//     return view('auth.login');
+// });
+Route::resource('/', \App\Http\Controllers\DashboardsController::class);
 Route::get('/login',function(){
     return view('auth.login');
 });
@@ -47,6 +48,7 @@ Route::post('aboutupdate',[AboutController::class, 'aboutupdate'])->name('aboutu
 
 
 Route::resource('/dashboard', \App\Http\Controllers\DashboardController::class);
+Route::resource('/dashboards', \App\Http\Controllers\DashboardsController::class);
 Route::get('/integratedsystem',[IntegratedSystemController::class,'index']);
 Route::post('/storeintegratedsystemList',[IntegratedSystemController::class, 'storeintegratedsystemList'])->name('storeintegratedsystemList');
 Route::post('updateintegratedsystemList',[IntegratedSystemController::class, 'updateintegratedsystemList'])->name('updateintegratedsystemList');
