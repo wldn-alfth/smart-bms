@@ -15,15 +15,15 @@
                     <!-- Sales bar chart-->
                     <div class="card">
                         <div class="card-body justify-content-center">
-                            <h3 class="h4 mb-3 ">CCTV Utama</h3>
-                            <div class="row d-flex justify-content-center pt-3">
+                            <h3 class="h4 mb-3 ">CCTV Utama (Disable)</h3>
+                            {{-- <div class="row d-flex justify-content-center pt-3">
                                     <a href="http://admin:LabIoT123@203.6.149.118:89/ISAPI/Streaming/channels/102/httpPreview">
                                         <img src="img/stock/stock_cam.jpeg" alt="cam" width="100%" height="400px">
                                     </a>
                                 <div class="mt-3">
                                     <a class="btn btn-success " href="http://admin:LabIoT123@203.6.149.118:89/ISAPI/Streaming/channels/102/httpPreview">Open CCTV</a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

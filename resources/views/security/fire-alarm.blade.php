@@ -18,10 +18,10 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center pt-3">
-                                        <h3 class="h4 mb-3 text">Status {{$item->nama}}</h3>
+                                        <h3 class="h4 mb-3 text">Status {{$item->nama}} (Disable)</h3>
                                     </div>
                                     
-                                        <div class="row align-items-end">
+                                        {{-- <div class="row align-items-end">
                                             <div class="col-lg-12">
                                                 @if($item->status==1) 
                                                 <p class="text-xl fw-light mb-0 text-danger">DANGER</p><span>
@@ -39,7 +39,7 @@
                                                 @endif
                                             
                                             </div> 
-                                        </div>
+                                        </div> --}}
                                 </div>
                             </div>
                         </div>

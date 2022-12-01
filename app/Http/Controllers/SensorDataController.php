@@ -327,7 +327,7 @@ class SensorDataController extends Controller
         $data2 = EnergyPanelMaster::select('nama','status')->oldest()->pluck('status');//latest()->get();//->toJson(JSON_PRETTY_PRINT);
         $data3 = EnergyOutlet::select('nama','status')->oldest()->pluck('status');//->toJson(JSON_PRETTY_PRINT);
         $data4 = EnergyOutletMaster::select('nama','status')->oldest()->pluck('status');//->toJson(JSON_PRETTY_PRINT);
-        return response()->json(['p' => $data, 'pm'=>$data2,'om' => $data4,  ]);
+        return response()->json($data);
         //return response()($data,$data2,$data3,$data4);
     }
 

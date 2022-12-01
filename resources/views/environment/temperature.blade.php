@@ -18,7 +18,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="row d-flex justify-content-center pt-3">
-                                        <h3 class="h4 mb-3 ">Temperature</h3>
+                                        <h3 class="h4 mb-3 ">Temperature (Disable, Static Data)</h3>
                                         @forelse ($temperature as $item)
                                         <div class="row align-items-end">
                                             <div class="col-lg-5">

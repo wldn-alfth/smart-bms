@@ -18,7 +18,7 @@
                                     <div class="row d-flex justify-content-center pt-3">
                                         
                                         
-                                        <h3 class="h4 mb-3 text">Humidity</h3>
+                                        <h3 class="h4 mb-3 text">Humidity (Disable, Static Data)</h3>
                                         @forelse ($humidity as $item)
                                         <div class="row align-items-end">
                                             <div class="col-lg-5">

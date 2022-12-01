@@ -89,7 +89,15 @@
                   <li><a class="sidebar-link" href="{{url('cost')}}">Statistic</a></li>
                 </ul>
               </li>
-              
+              <li class="sidebar-item"><a class="sidebar-link" href="#securitydropdown" data-bs-toggle="collapse"> 
+                <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                  <use xlink:href="#security-shield-1"> </use>
+                </svg><span>Security</span></a>
+                <ul class="collapse list-unstyled " id="securitydropdown">
+                  <li><a class="sidebar-link" href="{{url('camera')}}">Camera</a></li>
+                  <li><a class="sidebar-link" href="{{url('fire-alarm')}}">Fire Alarm</a></li>
+                </ul>
+              </li>
               <li class="sidebar-item"><a class="sidebar-link" href="#enviDropdown" data-bs-toggle="collapse"> 
                 <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                         <use xlink:href="#stack-1"> </use>
