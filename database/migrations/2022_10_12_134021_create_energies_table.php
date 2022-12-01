@@ -15,7 +15,7 @@ class CreateEnergiesTable extends Migration
     {
         Schema::create('energies', function (Blueprint $table) {
             $table->id();
-            $table->int('id_kwh');
+            $table->integer('id_kwh');
             $table->float('frekuensi');
             $table->float('arus');
             $table->float('tegangan');

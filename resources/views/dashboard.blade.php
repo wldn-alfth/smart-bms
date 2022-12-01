@@ -65,52 +65,7 @@
                         @endif
                         @endforeach
 
-                        @foreach($fire_alarm_status as $fire_alarm_statuss)
-                        @if($fire_alarm_statuss->status==1)
-                        <div class="col-lg">
-                            <div class="card mb-0">
-                                <div class="card-body">
-                                    @foreach ($fire as $item)
-                                            
-                                        @if($item->status==0)
-                                    <div class="d-flex align-items-end justify-content-between mb-2">
-                                        <div class="me-2">
-                                            <svg class="svg-icon svg-icon-sm svg-icon-heavy text-gray-600 mb-2">
-                                                    <use xlink:href="#paper-stack-1"> </use>
-                                            </svg>            
-                                            <p class="text-sm text-uppercase text-gray-600 lh-1 mb-0">Fire Alarm</p>
-                                        </div>
-                                        <p class="text-xxl lh-1 mb-0 text-success">OK</p>
-                                        
-                                    </div>
-                                    <div class="progress" style="height: 3px">
-                                        <div class="progress-bar" role="progressbar"
-                                            style="width: 100%; background-color: #28a745;" aria-valuenow="80"
-                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    @else
-                                    <div class="d-flex align-items-end justify-content-between mb-2">
-                                        <div class="me-2">
-                                            <svg class="svg-icon svg-icon-sm svg-icon-heavy text-gray-600 mb-2">
-                                                    <use xlink:href="#paper-stack-1"> </use>
-                                            </svg>            
-                                            <p class="text-sm text-uppercase text-gray-600 lh-1 mb-0">Fire Alarm</p>
-                                        </div>
-                                        <p class="text-xxl lh-1 mb-0 text-danger">⚠</p>
-                                        
-                                    </div>
-                                    <div class="progress" style="height: 3px">
-                                        <div class="progress-bar" role="progressbar"
-                                            style="width: 100%; background-color: #a72828;" aria-valuenow="80"
-                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
+                        
 
                         @foreach($temp_status as $temp_statuss)
                         @if($temp_statuss->status==1)
@@ -278,23 +233,7 @@
                         @endif
                         @endforeach
 
-                        @foreach($camera_status as $camera_statuss)
-                        @if($camera_statuss->status==1)
-                        <div class="col-lg">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3" href="{{url('camera')}}">Camera</h3>
-                                    <div class="row align-items-center">
-                                            <a img href="{{url('camera')}}">
-                                            <img src="img/stock/stock_cam.jpeg" alt="cam" width="100%" height="90px">
-                                            </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endif
-                        @endforeach
+                        
 
                     </div>
                 </div>
@@ -385,15 +324,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies2->tegangan }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                         
                                        
                                     </div>
                                 </div>
@@ -417,15 +348,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies2->arus }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -448,15 +371,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->frekuensi }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                        
                                       
                                     </div>
                                 </div>
@@ -482,15 +397,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies2->active_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                        
                                        
                                     </div>
                                 </div>
@@ -514,15 +421,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies2->reactive_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                        
                                       
                                     </div>
                                 </div>
@@ -546,15 +445,7 @@
                                         </div>
                                         @empty
                                         @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->apparent_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
+                                        
                                       
                                     </div>
                                 </div>

@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </section>
-            <section class="pt-3 mt-3">
+            <section class="pt-0 mt-0">
                 <div class="container-fluid">
                     <div class="row d-flex align-items-stretch gy-4">
                         <div class="col-lg">

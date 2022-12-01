@@ -79,25 +79,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="h4 mb-3 text-">Panel Node</h3>
-                                    @foreach ($energy_outlet_master as $energy_outlet_masters)
-                                    <div class="d-flex align-items-end justify-content-between pt-2 pb-2">
-                                        <div class="me-2">
-                                            <h3 class="text-sm d-block text-dash-color-2 text-uppercase">Outlet Master</h3>
-                                        </div>
                                     
-                                    @if($energy_outlet_masters->status==1)
-                                    <label class="switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
-                                        <a href="{{ url('control-change-status-outlet-master/'.$energy_outlet_masters->id) }}" class="slider round" ></a>
-                                    </label>
-                                    @else
-                                    <label class="switch">
-                                        <input type="checkbox" class="custom-control-input" id="customSwitch2" disabled>
-                                        <a href="{{ url('control-change-status-outlet-master/'.$energy_outlet_masters->id) }}" class="slider round" ></a>
-                                    </label>
-                                    @endif
-                                    @endforeach
-                                    </div>
                                     @foreach ($energy_panel as $energy_panels)
                                     <div class="d-flex align-items-end justify-content-between pt-2 pb-2">
                                         

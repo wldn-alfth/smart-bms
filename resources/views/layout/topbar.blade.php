@@ -89,15 +89,7 @@
                   <li><a class="sidebar-link" href="{{url('cost')}}">Statistic</a></li>
                 </ul>
               </li>
-              <li class="sidebar-item"><a class="sidebar-link" href="#securitydropdown" data-bs-toggle="collapse"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                  <use xlink:href="#security-shield-1"> </use>
-                </svg><span>Security</span></a>
-                <ul class="collapse list-unstyled " id="securitydropdown">
-                  <li><a class="sidebar-link" href="{{url('camera')}}">Camera</a></li>
-                  <li><a class="sidebar-link" href="{{url('fire-alarm')}}">Fire Alarm</a></li>
-                </ul>
-              </li>
+              
               <li class="sidebar-item"><a class="sidebar-link" href="#enviDropdown" data-bs-toggle="collapse"> 
                 <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                         <use xlink:href="#stack-1"> </use>
@@ -105,22 +97,13 @@
                 <ul class="collapse list-unstyled " id="enviDropdown">
                   <li><a class="sidebar-link" href="{{url('temperature')}}">Temperature</a></li>
                   <li><a class="sidebar-link" href="{{url('humidity')}}">Humidity</a></li>
-                  <li><a class="sidebar-link" href="{{url('light')}}">Light</a></li>
-                  {{-- <li><a class="sidebar-link" href="{{url('kontrol')}}">Control</a></li> --}}
-                  
                 </ul>
               </li>
-              <li class="sidebar-item"><a class="sidebar-link" href="{{url('pinpoint')}}"> 
-                <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                  <use xlink:href="#portfolio-grid-1"> </use>
-                </svg><span>Pin Point </span></a></li>
+              
               <hr class="sidebar-divider my-0">
               @if (Auth::user()->level == 'Admin' || Auth::user()->level == 'Developer')
               <ul class="list-unstyled">
-                <li class="sidebar-item"><a class="sidebar-link" href="{{url('daftar-admin')}}"> 
-                        <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                          <use xlink:href="#survey-1"> </use>
-                        </svg><span>List of Permissions</span></a></li>
+                
                 <li class="sidebar-item"><a class="sidebar-link" href="{{url('daftar-sensor')}}"> 
                           <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                             <use xlink:href="#portfolio-grid-1"> </use>
@@ -130,16 +113,17 @@
                               <use xlink:href="#paper-stack-1"> </use>
                             </svg><span>Setting</span></a></li>
               </ul>
-              @endif
-              <hr class="sidebar-divider my-0">
-              <li class="sidebar-item"><a class="sidebar-link" href="{{url('integratedsystem')}}"> 
+              <li class="sidebar-item"><a class="sidebar-link" href="{{url('about')}}"> 
                 <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                   <use xlink:href="#survey-1"> </use>
-                </svg><span>Integrated System </span></a></li>
-              <li class="sidebar-item"><a class="sidebar-link" href="{{url('about')}}"> 
-                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                    <use xlink:href="#survey-1"> </use>
-                  </svg><span>About </span></a></li>
+                </svg><span>About </span></a></li>
+              @endif
+              <hr class="sidebar-divider my-0">
+              <li class="sidebar-item"><a class="sidebar-link" href="https://iotlab-uns.com/smart-bms/"> 
+                <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                  <use xlink:href="#browser-window-1"> </use>
+                </svg><span>SBMS Lab IoT</span></a></li>
+              
               <footer class="position-absolute bottom-0 text-end py-3 text-xs" id="footer">
                 <div class="container-fluid text-center">
                    <p class="mb-0 text-dash-gray">2022 &copy; Created by <a href="https://elektro.ft.uns.ac.id/laboratorium-internet-of-things-iot/">IoT Lab UNS</a></p>

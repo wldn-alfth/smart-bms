@@ -28,10 +28,10 @@ use App\Http\Controllers\AboutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('/',function(){
-//     return view('auth.login');
-// });
-Route::resource('/', \App\Http\Controllers\DashboardsController::class);
+ Route::get('/',function(){
+     return view('auth.login');
+ });
+//Route::resource('/', \App\Http\Controllers\DashboardsController::class);
 Route::get('/login',function(){
     return view('auth.login');
 });
@@ -153,7 +153,7 @@ Route::post('/storePanelList',[EnergyController::class, 'storePanelList'])->name
 Route::post('updatePanelList',[EnergyController::class, 'updatePanelList'])->name('updatePanelList');
 Route::get('showPanelList/{id}',[EnergyController::class, 'showPanelList']);
 Route::get('deletePanelList/{id}',[EnergyController::class, 'deletePanelList']);
-Route::get('/daftar-Panel-create',function(){return view('admin.sensor.Panelcreate');});
+Route::get('/daftar-Panel-create',function(){return view('admin.sensor.panelcreate');});
 Route::get('/daftar-Panel-edit/{id}',[EnergyController::class, 'editPanelList'])->name('editPanelList')->middleware('auth');
 Route::get('showPanelMasterList/{id}',[EnergyController::class, 'showPanelMasterList']);
 //Outlet

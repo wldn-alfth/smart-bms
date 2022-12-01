@@ -145,6 +145,145 @@
                     </div>
                 </div>
             </section>
+            
+            
+            <section class="mt-0 pt-0">
+                <div class="container-fluid">
+                    <div class="row d-flex align-items-stretch gy-4">
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Voltage</h3>
+                                    <!-- <p class="text-sm fw-light">Lorem ipsum dolor sit</p> -->
+                                    <div class="row align-items-center mb-0">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies->tegangan }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                        
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Current</h3>
+                                    <div class="row align-items-end">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies->arus }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Frequency</h3>
+                                    <div class="row align-items-end">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies->frekuensi }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                       
+                                        
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </section>
+            <section class="pt-0">
+                <div class="container-fluid">
+                    <div class="row d-flex align-items-stretch gy-4">
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Active Power</h3>
+                                    <!-- <p class="text-sm fw-light">Lorem ipsum dolor sit</p> -->
+                                    <div class="row align-items-center mb-0">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies->active_power }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                        
+                                        
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Reactive Power</h3>
+                                    <div class="row align-items-end">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies->reactive_power }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                        
+                                        
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <!-- Sales bar chart-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3">Apparent Power</h3>
+                                    <div class="row align-items-end">
+                                        @forelse ($energy as $energies)
+                                        <div class="col-lg-6">
+                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies->apparent_power }}</p>
+                                            <p>Master</p>
+                                        </div>
+                                        @empty
+                                        @endforelse
+                                        
+                                        
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                    
+                
+            </section>
             <section class="pt-0 mt-0">
                 <div class="container-fluid">
                     <div class="row d-flex align-items-stretch gy-4">
@@ -155,20 +294,7 @@
                                     <div class="row d-flex justify-content-center pt-3">
                                         <h3 class="h4 mb-3">Status</h3>
                                          <div class="row align-items-end">
-                                            @foreach($energy_outlet_master as $energy_outlet_masters)
-                                                    <div class="col-lg-6">
-                                                        <p class="text-xl fw-light mb-0 text-info">Outlet Master</p><span>
-                                                    </div> 
-                                                    @if($energy_outlet_masters->status==1)
-                                                    <div class="col-lg-6">
-                                                        <p class="text-xl fw-light mb-0 text-end text-success">Online</p><span>
-                                                    </div>
-                                                    @else
-                                                    <div class="col-lg-6">
-                                                        <p class="text-xl fw-light mb-0 text-end text-dash-color-3">Offline</p><span>
-                                                    </div>
-                                                    @endif
-                                            @endforeach
+                                            
                                             @foreach($energy_panel as $energy_panels)
                                                     <div class="col-lg-6">
                                                         <p class="text-xl fw-light mb-0 text-info">{{$energy_panels->nama}}</p><span>
@@ -205,187 +331,7 @@
                     </div>
                 </div>
             </section>
-            @if (Auth::user()->level == 'Admin' || Auth::user()->level == 'Developer')
-            <section class="mt-3 pt-0">
-                <div class="container-fluid">
-                    <div class="row d-flex align-items-stretch gy-4">
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Voltage</h3>
-                                    <!-- <p class="text-sm fw-light">Lorem ipsum dolor sit</p> -->
-                                    <div class="row align-items-center mb-0">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies->tegangan }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-1">{{ $energies2->tegangan }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Current</h3>
-                                    <div class="row align-items-end">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies->arus }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies2->arus }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Frequency</h3>
-                                    <div class="row align-items-end">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies->frekuensi }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->frekuensi }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-            </section>
-            <section class="pt-0">
-                <div class="container-fluid">
-                    <div class="row d-flex align-items-stretch gy-4">
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Active Power</h3>
-                                    <!-- <p class="text-sm fw-light">Lorem ipsum dolor sit</p> -->
-                                    <div class="row align-items-center mb-0">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies->active_power }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-dash-color-2">{{ $energies2->active_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Reactive Power</h3>
-                                    <div class="row align-items-end">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies->reactive_power }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-info">{{ $energies2->reactive_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <!-- Sales bar chart-->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3 class="h4 mb-3">Apparent Power</h3>
-                                    <div class="row align-items-end">
-                                        @forelse ($energy as $energies)
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies->apparent_power }}</p>
-                                            <p>Master</p>
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                        @forelse ($energy2 as $energies2) 
-                                        <div class="col-lg-6">
-                                            <p class="text-xl fw-light mb-0 text-warning">{{ $energies2->apparent_power }}</p>
-                                            @foreach ($energy_panel as $energy_panels) 
-                                            <p>{{$energy_panels->nama}}</p>
-                                            @endforeach
-                                        </div>
-                                        @empty
-                                        @endforelse
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-                    
-                
-            </section>
-            @endif
+            
             
             <!-- Hidden section for chart canvas -->
             <section hidden>

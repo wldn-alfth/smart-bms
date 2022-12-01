@@ -169,12 +169,12 @@ class EnergyController extends Controller
         return view('admin.sensor.outletedit',compact('editoutlet'));
     }
     public function showOutletMasterList($id){
-        $outletshow = EnergyOutlet::where('id',$id)->get();
+        $outletshow = EnergyOutletMaster::where('id',$id)->get();
         $about = About::oldest()->get();
         return view('admin.sensor.outletmastershow',compact('outletshow','about'));
     }
     public function showPanelMasterList($id){
-        $outletshow = EnergyOutlet::where('id',$id)->get();
+        $outletshow = EnergyPanelMaster::where('id',$id)->get();
         $about = About::oldest()->get();
         return view('admin.sensor.panelmastershow',compact('outletshow','about'));
     }
