@@ -21,7 +21,7 @@
                 <!-- Sales bar chart-->
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="h4 mb-2 text-primary d-flex justify-content-center"><a href="{{$integrated_systems->link}}">{{$integrated_systems->nama}}</a></h2>
+                        <h2 class="h4 mb-2 text-primary d-flex justify-content-center"><a href="{{$integrated_systems->link}}"><h1>keamanan lemah</h1>{{$integrated_systems->nama}}</a></h2>
                         <div class="row d-flex justify-content-center pt-0">
                             
                               <p class="text text-break text-start fw-light mb-2 ">{{$integrated_systems->deskripsi}}</p><span>
