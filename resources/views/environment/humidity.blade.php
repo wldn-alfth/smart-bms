@@ -3,9 +3,30 @@
 <div class="page-content">
     <!-- Page Header-->
     <div class="bg-dash-dark-1 py-4">
-      <div class="container-fluid">
-        <h2 class="h5 mb-0">Humidity</h2>
-      </div>
+        @php
+        $energy_system = App\Models\DhtSensor::latest()->first();
+        if($energy_system){
+            $energy_created_at = Carbon\Carbon::parse($energy_system->created_at);
+            $now = Carbon\Carbon::now();
+        }else{
+            $energy_created_at = null;
+            $now = null;
+        }
+    @endphp
+    
+    @if($energy_created_at && $now)
+        @if ($now->diffInHours($energy_created_at) > 3)
+            <div class="container-fluid">
+                <h2 class="h5 mb-0">Humidity <span class="dot-offline mb-0"></span> </h2>
+                <p class="text-sm lh-1 mb-0">Terakhir Online {{$energy_created_at}}</p>
+            </div>
+        @else
+            <div class="container-fluid">
+                <h2 class="h5 mb-0">Humidity <span class="dot-online mb-0"></span> </h2>
+                <p class="text-sm lh-1 mb-0">Online</p>
+            </div>
+        @endif
+    @endif
     </div>
   <div class="container-fluid">
             <section class="pt-3 mt-3">

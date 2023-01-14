@@ -148,6 +148,17 @@
           </nav>
 
 
+    {{-- <button class="btn btn-warning btn-sm d-none d-md-inline-block" type="button" data-bs-toggle="collapse" data-bs-target="#style-switch" id="style-switch-button"><i class="fas fa-cog fa-2x"></i></button>
+    <div class="collapse" id="style-switch">
+      <h5 class="mb-3">Select theme colour</h5>
+      <form class="mb-3">
+        <select class="form-select" name="colour" id="colour">
+          <option value="default">dark</option>
+          <option value="changeup">light</option>
+        </select>
+      </form>
+      </div> --}}
+
       @yield('content')
 
 
@@ -192,6 +203,13 @@
       
       
     </script>
+    <script>
+      document.querySelector('#colour').addEventListener('change', function() {
+        const theme = this.value;
+        document.querySelector('#theme-stylesheet').setAttribute('href', '/css/style.' + theme + '.css');
+      });
+    </script>
+
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </body>

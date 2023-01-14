@@ -215,6 +215,20 @@ input:checked+.slider:before {
 #draggable3, #draggable2 {
     cursor: move;
 }
+.dot-online {
+    height: 8px;
+    width: 8px;
+    background-color: #28a745;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-offline {
+    height: 8px;
+    width: 8px;
+    background-color: #dc3545;
+    border-radius: 50%;
+    display: inline-block;
+}
 /* #containment-wrapper {
     width: 800px;
     height: 500px;

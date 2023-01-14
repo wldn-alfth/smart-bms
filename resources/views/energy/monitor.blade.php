@@ -3,10 +3,32 @@
 <div class="page-content">
     <!-- Page Header-->
     <div class="bg-dash-dark-1 py-4">
-      <div class="container-fluid">
-        <h2 class="h5 mb-0">Monitor </h2>
-      </div>
+        @php
+        $energy_system = App\Models\Energy::latest()->first();
+        if($energy_system){
+            $energy_created_at = Carbon\Carbon::parse($energy_system->created_at);
+            $now = Carbon\Carbon::now();
+        }else{
+            $energy_created_at = null;
+            $now = null;
+        }
+    @endphp
+    
+    @if($energy_created_at && $now)
+        @if ($now->diffInHours($energy_created_at) > 3)
+            <div class="container-fluid">
+                <h2 class="h5 mb-0">Monitor <span class="dot-offline mb-0"></span> </h2>
+                <p class="text-sm lh-1 mb-0">Terakhir Online {{$energy_created_at}}</p>
+            </div>
+        @else
+            <div class="container-fluid">
+                <h2 class="h5 mb-0">Monitor <span class="dot-online mb-0"></span> </h2>
+                <p class="text-sm lh-1 mb-0">Online</p>
+            </div>
+        @endif
+    @endif
     </div>
+
   <div class="container-fluid">
 
             <section class="mt-3">
@@ -243,7 +265,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="h4 mb-3">Current</h3>
-                                    <div class="row align-items-end">
+                                    <div class="row align-items-center mb-0">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies->arus }}</p>
@@ -269,7 +291,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="h4 mb-3">Frequency</h3>
-                                    <div class="row align-items-end">
+                                    <div class="row align-items-center mb-0">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies->frekuensi }}</p>
@@ -331,7 +353,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="h4 mb-3">Reactive Power</h3>
-                                    <div class="row align-items-end">
+                                    <div class="row align-items-center mb-0">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-info">{{ $energies->reactive_power }}</p>
@@ -358,7 +380,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="h4 mb-3">Apparent Power</h3>
-                                    <div class="row align-items-end">
+                                    <div class="row align-items-center mb-0">
                                         @forelse ($energy as $energies)
                                         <div class="col-lg-6">
                                             <p class="text-xl fw-light mb-0 text-warning">{{ $energies->apparent_power }}</p>
@@ -445,6 +467,13 @@
         injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
 
     </script>
+<script type="text/javascript">
+        function autoRefreshPage()
+        {
+            window.location = window.location.href;
+        }
+        setInterval('autoRefreshPage()', 120000);
+</script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
