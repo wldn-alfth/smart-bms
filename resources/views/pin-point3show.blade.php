@@ -19,7 +19,7 @@
                         <div class="card-body justify-content-center">
                             @foreach ($map as $maps)                            
                             <div id="containment-wrapper" style="width: 800px;
-                                                                height: 500px;
+                                                                height: 800px;
                                                                 position: relative;
                                                                 background-image:url('{{asset('/data_file/'.$maps->map)}}');
                                                                 background-repeat: no-repeat;     
