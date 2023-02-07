@@ -125,10 +125,21 @@
                           <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                             <use xlink:href="#portfolio-grid-1"> </use>
                           </svg><span>List of Devices</span></a></li>
+                <li class="sidebar-item"><a class="sidebar-link" href="#doorlockdropdown" data-bs-toggle="collapse"> 
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                    <use xlink:href="#security-shield-1"> </use>
+                  </svg><span>Doorlock</span></a>
+                  <ul class="collapse list-unstyled " id="doorlockdropdown">
+                    <li><a class="sidebar-link" href="{{url('doorlock_list')}}">Permission List</a></li>
+                    <li><a class="sidebar-link" href="{{url('doorlock_list_room')}}">Room List</a></li>
+                    <li><a class="sidebar-link" href="{{url('doorlock_history')}}">History</a></li>
+                  </ul>
+                </li>
                 <li class="sidebar-item"><a class="sidebar-link" href="{{url('setting-admin')}}"> 
                             <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                               <use xlink:href="#paper-stack-1"> </use>
                             </svg><span>Setting</span></a></li>
+
               </ul>
               @endif
               <hr class="sidebar-divider my-0">
