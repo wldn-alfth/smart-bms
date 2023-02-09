@@ -65,6 +65,27 @@ class DoorlockStateController extends Controller
         
         return back();
         }
+        public function storemandiri_doorlockAccess(Request $request){
+       
+            request()->validate(
+                [
+                    'nama'=> 'required',
+                    'token'=> 'required',                
+                ]);
+    
+            $data = new DoorlockAccess;
+            $data->nama = $request->nama;
+            $data->token = $request->token;
+            $data->level_akses = '1';
+            $data->is_aktif = '0';
+            $data->save();
+    
+            return redirect('doorlock-iot');
+        }
+        public function Doorlock($id){
+            $data = DoorlockState::where('id',$id)->pluck('status');
+            return $data;
+        }
 
 
 

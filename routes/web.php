@@ -182,7 +182,7 @@ Route::get('/change_state_doorlock/{id}',[DoorlockStateController::class,'change
 Route::get('/validate_doorlockAccess/{id}',[DoorlockAccessController::class,'validate_doorlockAccess'])->name('validate_doorlockAccess');
 Route::get('/create_doorlockAccess',function(){return view('admin.doorlockaccesscreate');});
 Route::get('/createmandiri_doorlockAccess',function(){return view('security.doorlockaccesscreatemandiri');});
-Route::post('/storemandiri_doorlockAccess',[DoorlockAccessController::class, 'storemandiri_doorlockAccess'])->name('storemandiri_doorlockAccess');
+Route::post('/storemandiri_doorlockAccess',[DoorlockStateController::class, 'storemandiri_doorlockAccess'])->name('storemandiri_doorlockAccess');
 Route::post('/proses_token_doorlock_iot', [DoorlockStateController::class,'proses_token_doorlock_iot'])->name('proses_token_doorlock_iot');
 Route::post('/store_doorlockAccess',[DoorlockAccessController::class, 'store_doorlockAccess'])->name('store_doorlockAccess');
 Route::get('/delete_doorlockAccess/{id}',[DoorlockAccessController::class, 'delete_doorlockAccess']);

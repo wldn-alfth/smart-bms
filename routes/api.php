@@ -6,7 +6,7 @@ use App\Http\Controllers\SensorDataController;
 use App\Http\Controllers\DashboardDataController;
 use App\Http\Controllers\ApiDataController;
 use App\Http\Controllers\EnergyController;
-
+use App\Http\Controllers\DoorlockStateController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -71,7 +71,8 @@ Route::post('Outlet/{id}',[SensorDataController::class, 'updateOutlet'])->name('
 Route::get('Panel',[SensorDataController::class, 'getAllPanel'])->name('getAllPanel');
 Route::get('Panel/{id}',[SensorDataController::class, 'getPanel'])->name('getPanel');
 Route::post('Panel/{id}',[SensorDataController::class, 'updatePanel'])->name('postPanel');
-
+//api doorlock
+Route::get('Doorlock/{id}',[DoorlockStateController::class, 'Doorlock'])->name('Doorlock');
 //web view
 Route::get('statistik',[SensorDataController::class, 'energyStatistik'])->name('energyStatistik');
 
