@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardDataController;
 use App\Http\Controllers\ApiDataController;
 use App\Http\Controllers\EnergyController;
 use App\Http\Controllers\DoorlockStateController;
+use App\Http\Controllers\PlcSipilController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -44,13 +45,6 @@ Route::get('ApiLight/{id}',[SensorDataController::class, 'getLight'])->name('get
 Route::get('ApiLight',[SensorDataController::class, 'getLightAll'])->name('getLightAll');
 Route::post('ApiLight/{id}',[SensorDataController::class, 'postLight'])->name('postLight');
 
-//apidata energy
-//Route::get('ApiData',[ApiDataController::class,'getAllData']);
-//Route::get('ApiData/{id}',[ApiDataController::class,'getData']);
-//Route::post('ApiData',[ApiDataController::class,'addData']);
-//Route::put('ApiData/{id}',[ApiDataController::class,'updateData']);
-//Route::delete('ApiData/{id}',[ApiDataController::class,'deleteData']);
-
 //api monitor energy
 Route::get('ApiEnergy',[SensorDataController::class,'getAllData']);
 Route::get('ApiEnergy/{id}',[SensorDataController::class,'getData']);
@@ -73,6 +67,12 @@ Route::get('Panel/{id}',[SensorDataController::class, 'getPanel'])->name('getPan
 Route::post('Panel/{id}',[SensorDataController::class, 'updatePanel'])->name('postPanel');
 //api doorlock
 Route::get('Doorlock/{id}',[DoorlockStateController::class, 'Doorlock'])->name('Doorlock');
+
+//sipill
+Route::get('plc_sipil',[PlcSipilController::class, 'plc_sipil_get'])->name('plc_sipil_get');
+Route::post('plc_sipil',[PlcSipilController::class, 'plc_sipil_post'])->name('plc_sipil_post');
+Route::get('plc_sipil_statistik',[PlcSipilController::class, 'plc_sipil_statistik'])->name('plc_sipil_statistik');
+
 //web view
 Route::get('statistik',[SensorDataController::class, 'energyStatistik'])->name('energyStatistik');
 

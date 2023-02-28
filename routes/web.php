@@ -21,6 +21,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DoorlockStateController;
 use App\Http\Controllers\DoorlockAccessController;
 use App\Http\Controllers\DoorlockHistoryController;
+use App\Http\Controllers\PlcSipilController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -197,6 +198,10 @@ Route::get('/delete_doorlockRoom/{id}',[DoorlockAccessController::class, 'delete
 Route::get('/create_doorlockRoom',function(){return view('admin.doorlockaccessroomcreate');});
 Route::get('/edit_doorlockRoom/{id}',[DoorlockAccessController::class, 'edit_doorlockRoom'])->name('edit_doorlockRoom')->middleware('auth');
 
+//sipil
+Route::get('/plc_sipil',[PlcSipilController::class,'index']);
+Route::get('/export_plc_sipil',[PlcSipilController::class,'export_plc_sipil']);
+Route::get('truncateDataSipil',[PlcSipilController::class,'truncateDataSipil']);
 
 //login multi level user-proses autentikasi login
 Route::get('/login', [AuthController::class, 'index'])->name('login');
